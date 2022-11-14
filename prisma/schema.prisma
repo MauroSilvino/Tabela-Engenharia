@@ -15,7 +15,8 @@ model User {
   password  String
   createdAt DateTime @default(now())
 
-  address Address?
+  address  Address?
+  projects Project[]
 
   @@map("users")
 }
@@ -30,4 +31,18 @@ model Address {
   userId        Int    @unique
 
   user User @relation(fields: [userId], references: [id])
+
+  @@map("addresses")
+}
+
+model Project {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  value     Float
+  authorId  Int
+  createdAt DateTime @default(now())
+
+  author User @relation(fields: [authorId], references: [id])
+
+  @@map("projects")
 }
