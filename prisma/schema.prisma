@@ -42,7 +42,21 @@ model Project {
   authorId  Int
   createdAt DateTime @default(now())
 
-  author User @relation(fields: [authorId], references: [id])
+  author User   @relation(fields: [authorId], references: [id])
+  items  Item[]
 
   @@map("projects")
+}
+
+model Item {
+  id          String  @id @default(uuid())
+  description String?
+  value       Float?
+  quantity    Float?
+  unity       String?
+  projectId   Int?
+
+  project Project? @relation(fields: [projectId], references: [id])
+
+  @@map("items")
 }
