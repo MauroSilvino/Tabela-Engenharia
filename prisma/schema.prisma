@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Users {
+model User {
   id        Int      @id @default(autoincrement())
   name      String
   email     String   @unique
@@ -15,5 +15,19 @@ model Users {
   password  String
   createdAt DateTime @default(now())
 
+  address Address?
+
   @@map("users")
+}
+
+model Address {
+  id            Int    @id @default(autoincrement())
+  street        String
+  number        String
+  city          String
+  neighboorhood String
+  country       String
+  userId        Int    @unique
+
+  user User @relation(fields: [userId], references: [id])
 }
