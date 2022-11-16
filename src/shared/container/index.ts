@@ -1,8 +1,15 @@
 import { container } from "tsyringe";
+import { ProjectsRepository } from "../../modules/projects/repositories/implementations/ProjectsRepository";
+import { IProjectsRepository } from "../../modules/projects/repositories/IProjectsRepository";
 import { UsersRepository } from "../../modules/users/repositories/implementations/UsersRepository";
 import { IUsersRepository } from "../../modules/users/repositories/IUsersRepository";
 
 container.registerSingleton<IUsersRepository>(
   "UsersRepository",
   UsersRepository
+);
+
+container.registerSingleton<IProjectsRepository>(
+  "ProjectsRepository",
+  ProjectsRepository
 );
