@@ -27,6 +27,7 @@ model Address {
   number        String
   city          String
   neighboorhood String
+  state         String
   country       String
   userId        Int    @unique
 
