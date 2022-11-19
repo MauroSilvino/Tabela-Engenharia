@@ -3,6 +3,7 @@ import { usersRoutes } from "./users.routes";
 import { Router } from "express";
 import { projectsRoutes } from "./projects.routes";
 import { itemsRoutes } from "./items.routes";
+import axios from "axios";
 
 export const routes = Router();
 
