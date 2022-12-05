@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import { UsersRepository } from "../../repositories/implementations/UsersRepository";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
 export class CreateUserController {
@@ -8,7 +7,7 @@ export class CreateUserController {
     const data = req.body;
     const createUserUseCase = container.resolve(CreateUserUseCase);
 
-    await createUserUseCase.execute(data);
-    return res.status(201).json();
+    const result = await createUserUseCase.execute(data);
+    return res.status(201).json(result);
   }
 }
