@@ -73,5 +73,6 @@ model Category {
 
   items Item[]
 
+  @@fulltext([name])
   @@map("categories")
 }
