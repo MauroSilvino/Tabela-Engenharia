@@ -1,6 +1,7 @@
 import { ICreateItemDTO } from "./../../dtos/ICreateItemDTO";
 import { IItemsRepository } from "../IItemsRepository";
 import { prismaClient } from "../../../../database/prismaClient";
+import { Item } from "@prisma/client";
 
 export class ItemsRepository implements IItemsRepository {
   async create({
@@ -25,5 +26,20 @@ export class ItemsRepository implements IItemsRepository {
     });
 
     return item;
+  }
+
+  async findItemsByDescription(description: string): Promise<Item[]> {
+    const searchParams = description
+      .split(" ")
+      .map((str) => "+" + str)
+      .join(" ");
+
+    return await prismaClient.item.findMany({
+      where: {
+        description: {
+          search: searchParams,
+        },
+      },
+    });
   }
 }
