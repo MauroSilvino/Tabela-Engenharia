@@ -7,6 +7,8 @@ import { IProjectsRepository } from "../../modules/projects/repositories/IProjec
 import { UsersRepository } from "../../modules/users/repositories/implementations/UsersRepository";
 import { IUsersRepository } from "../../modules/users/repositories/IUsersRepository";
 import { IAddressesRepository } from "../../modules/addresses/repositories/IAddressesRepository";
+import { ICategoriesRepository } from "../../modules/categories/repositories/ICategoriesRepository";
+import { CategoriesRepository } from "../../modules/categories/repositories/implementations/CategoriesRepository";
 
 container.registerSingleton<IUsersRepository>(
   "UsersRepository",
@@ -26,4 +28,9 @@ container.registerSingleton<IItemsRepository>(
 container.registerSingleton<IAddressesRepository>(
   "AddressesRepository",
   AddressesRepository
+);
+
+container.registerSingleton<ICategoriesRepository>(
+  "CategoriesRepository",
+  CategoriesRepository
 );
