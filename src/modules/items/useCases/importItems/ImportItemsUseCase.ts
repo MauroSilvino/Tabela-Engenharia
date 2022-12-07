@@ -1,6 +1,6 @@
-import { ICreateItemDTO } from "./../../dtos/ICreateItemDTO";
 import { inject, injectable } from "tsyringe";
-import { ItemsRepository } from "../../repositories/implementations/ItemsRepository";
+import { ICategoriesRepository } from "../../../categories/repositories/ICategoriesRepository";
+import { IItemsRepository } from "../../repositories/IItemsRepository";
 
 interface IData {
   "codigo 13a edição": string;
@@ -13,30 +13,49 @@ interface IData {
 export class ImportItemsUseCase {
   constructor(
     @inject("ItemsRepository")
-    private itemsRepository: ItemsRepository
+    private itemsRepository: IItemsRepository,
+    @inject("CategoriesRepository")
+    private categoriesRepository: ICategoriesRepository
   ) {}
 
   async create(data: IData[]) {
-    data.forEach(async (row) => {
-      if (
+    let categoryId = 0;
+
+    for (const row of data) {
+      const isCategory =
+        !row["codigo 13a edição"] &&
+        row.descrição &&
+        !row.unid &&
+        !row["pr ago/2012"];
+
+      const isItem =
         row["codigo 13a edição"] &&
-        row["codigo 13a edição"] &&
+        row.descrição &&
         row.unid &&
-        row["pr ago/2012"]
-      ) {
+        row["pr ago/2012"];
+
+      if (isCategory) {
+        const category = await this.categoriesRepository.create(row.descrição);
+        categoryId = category.id;
+      }
+
+      if (isItem) {
         const rowId = row["codigo 13a edição"]
           .replaceAll(".", "")
           .replaceAll("-", "");
 
         if (/^\d+$/.test(rowId)) {
+          console.log(categoryId);
+
           await this.itemsRepository.create({
             description: row.descrição,
             id: row["codigo 13a edição"],
             unity: row.unid,
             value: row["pr ago/2012"],
+            categoryId,
           });
         }
       }
-    });
+    }
   }
 }
