@@ -10,6 +10,7 @@ export class ItemsRepository implements IItemsRepository {
     value,
     projectId,
     quantity,
+    categoryId,
   }: ICreateItemDTO) {
     const item = await prismaClient.item.create({
       data: {
@@ -19,6 +20,7 @@ export class ItemsRepository implements IItemsRepository {
         quantity,
         unity,
         value,
+        categoryId,
       },
     });
 

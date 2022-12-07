@@ -5,4 +5,5 @@ export interface ICreateItemDTO {
   quantity?: number | undefined;
   unity: string | undefined;
   projectId?: number;
+  categoryId: number;
 }

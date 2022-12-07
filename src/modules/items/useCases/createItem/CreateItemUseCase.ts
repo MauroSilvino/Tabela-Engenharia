@@ -17,6 +17,7 @@ export class CreateItemUseCase {
     quantity,
     unity,
     value,
+    categoryId,
   }: ICreateItemDTO): Promise<Item> {
     const item = await this.itemsRepository.create({
       id,
@@ -25,6 +26,7 @@ export class CreateItemUseCase {
       value,
       description,
       projectId,
+      categoryId,
     });
 
     return item;
