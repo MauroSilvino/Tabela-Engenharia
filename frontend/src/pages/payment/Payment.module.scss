@@ -1,0 +1,73 @@
+.container {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.form {
+  background: var(--light-gray);
+  padding: 0.75rem;
+  margin: 0 1rem;
+  border-radius: 16px;
+
+  h2 {
+    font-size: 1rem;
+  }
+}
+
+.inputContainer {
+  margin-top: 0.7rem;
+  margin-bottom: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+
+  label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  input {
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+.doubleInput {
+  display: flex;
+  gap: 1rem;
+}
+
+.saveCard {
+  margin-top: -1.75rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.totalValue {
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.submitBtn {
+  background-color: var(--blue);
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
