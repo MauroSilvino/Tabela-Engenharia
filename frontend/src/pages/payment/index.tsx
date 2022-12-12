@@ -66,11 +66,7 @@ export const Payment = () => {
               {errors.name && (
                 <span className={styles.inputError}>{errors.name.message}</span>
               )}
-              <input
-                type="text"
-                id="fullName"
-                {...register("name", { required: true })}
-              />
+              <input type="text" id="fullName" {...register("name")} />
             </div>
 
             <div className={styles.inputContainer}>

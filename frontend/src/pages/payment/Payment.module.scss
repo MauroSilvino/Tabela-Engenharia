@@ -1,10 +1,11 @@
 .container {
   width: 100vw;
-  // height: 100vh;
   background: var(--white);
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding: 0 1rem;
+  overflow: hidden;
 
   .title {
     font-size: 1.5rem;
