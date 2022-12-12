@@ -1,13 +1,15 @@
 .container {
+  width: 100vw;
+  // height: 100vh;
   background: var(--white);
   display: flex;
   flex-direction: column;
   text-align: center;
-}
 
-.title {
-  font-size: 1.5rem;
-  margin: 1.5rem 0;
+  .title {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+  }
 }
 
 .form {
@@ -15,9 +17,12 @@
   padding: 0.75rem;
   margin: 0 1rem;
   border-radius: 16px;
+  max-width: 1220px;
+  margin: 0 auto;
 
   h2 {
     font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -27,6 +32,11 @@
   display: flex;
   flex-direction: column;
   text-align: start;
+
+  .inputError {
+    font-size: 0.85rem;
+    color: red;
+  }
 
   label {
     font-size: 0.875rem;
@@ -70,4 +80,33 @@
   font-weight: 700;
   font-size: 1rem;
   margin-top: 0.5rem;
+}
+
+@media (min-width: 800px) {
+  .container {
+    .title {
+      font-size: 3rem;
+    }
+  }
+
+  .form {
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .inputsArea {
+      display: flex;
+      gap: 1rem;
+
+      .inputContainer {
+        label {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .totalValue {
+      font-size: 1.25rem;
+    }
+  }
 }
