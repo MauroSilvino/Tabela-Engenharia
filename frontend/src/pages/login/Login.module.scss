@@ -1,0 +1,88 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 1rem;
+  overflow: hidden;
+
+  .passwordForgot {
+    width: 440px;
+    margin: 0.5rem auto 0;
+    text-align: left;
+    color: var(--blue);
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .description {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.form {
+  background: var(--light-gray);
+  padding: 1.5rem 0.75rem;
+  max-width: 440px;
+  width: 100%;
+  margin: 0 1rem;
+  border-radius: 16px;
+  margin: 0 auto;
+
+  .description {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+
+    @media (max-width: 800px) {
+      font-size: 1rem;
+    }
+  }
+
+  .inputContainer {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+
+    .inputError {
+      font-size: 0.85rem;
+      color: red;
+    }
+
+    label {
+      @media (max-width: 800px) {
+        font-size: 0.85rem;
+      }
+
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    input {
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      width: 100%;
+    }
+  }
+
+  .submitBtn {
+    background-color: var(--blue);
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+}
