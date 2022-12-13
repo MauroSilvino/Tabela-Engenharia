@@ -1,29 +1,26 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Footer } from "./pages/footer";
-import { Login } from "./pages/login";
-import { Navbar } from "./pages/navbar";
-import { Payment } from "./pages/payment";
-import { Register } from "./pages/register";
+import { Layout } from "./components/Layout";
+import { Login } from "./pages/Login";
+import { Payment } from "./pages/Payment";
+import { Register } from "./pages/Register";
 
 export const router = createBrowserRouter([
   {
-    path: "/payment",
-    element: <Payment />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/navbar",
-    element: <Navbar />,
-  },
-  {
-    path: "/footer",
-    element: <Footer />,
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/payment",
+        element: <Payment />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+    ],
   },
 ]);
