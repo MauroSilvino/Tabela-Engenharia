@@ -1,5 +1,4 @@
 .container {
-  width: 100vw;
   height: 100vh;
   background: var(--white);
   display: flex;
@@ -9,8 +8,8 @@
   overflow: hidden;
 
   .title {
-    font-size: 1.5rem;
-    margin: 1.5rem 0;
+    font-size: 3rem;
+    margin: 5rem 0 1.5rem 0;
   }
 
   .description {
@@ -64,5 +63,13 @@
     font-weight: 700;
     font-size: 1rem;
     margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    .title {
+      font-size: 2rem;
+    }
   }
 }

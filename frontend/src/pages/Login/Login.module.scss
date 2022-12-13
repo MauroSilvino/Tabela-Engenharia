@@ -16,8 +16,8 @@
   }
 
   .title {
-    font-size: 1.5rem;
-    margin: 1.5rem 0;
+    font-size: 3rem;
+    margin: 6rem 0;
   }
 
   .description {
@@ -38,10 +38,6 @@
   .description {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-
-    @media (max-width: 800px) {
-      font-size: 1rem;
-    }
   }
 
   .inputContainer {
@@ -57,10 +53,6 @@
     }
 
     label {
-      @media (max-width: 800px) {
-        font-size: 0.85rem;
-      }
-
       font-size: 1rem;
       font-weight: 700;
       margin-bottom: 2px;
@@ -84,5 +76,26 @@
     font-weight: 700;
     font-size: 1rem;
     margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    .title {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .form {
+    .description {
+      font-size: 1.25rem;
+    }
+  }
+
+  .inputContainer {
+    label {
+      font-size: 0.85rem;
+    }
   }
 }
