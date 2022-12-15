@@ -8,7 +8,7 @@ interface ForgotPasswordFormSchema {
   email: string;
 }
 
-const LoginFormSchema = yup
+const ForgetPasswordFormSchema = yup
   .object()
   .shape({
     email: yup
@@ -24,7 +24,7 @@ export const ForgotPassword = () => {
     formState: { errors },
     register,
   } = useForm<ForgotPasswordFormSchema>({
-    resolver: yupResolver(LoginFormSchema),
+    resolver: yupResolver(ForgetPasswordFormSchema),
   });
 
 
