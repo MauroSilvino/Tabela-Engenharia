@@ -12,7 +12,6 @@ export const Navbar = () => {
         <FiMenu
           color="#EDEDF5"
           size={40}/>
-       
       </div>
       <div className={styles.profile}>
         <CgProfile 

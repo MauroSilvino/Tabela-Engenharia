@@ -3,6 +3,7 @@ import * as yup from "yup";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { api } from "../../api";
+import { useNavigate } from "react-router-dom";
 
 interface RecoverPasswordFormSchema {
   email: string;
@@ -36,6 +37,8 @@ export const  RecoverPassword = () => {
 
     console.log(responseData);
   };
+  const navigate = useNavigate();
+  const handleClick = navigate("/resetpassword")
 
   return (
     <section className={styles.container}>
@@ -59,7 +62,7 @@ export const  RecoverPassword = () => {
           
         </div>
 
-        <button className={styles.submitBtn}>Confirmar</button>
+        <button className={styles.submitBtn} onClick={() => handleClick}>Confirmar</button>
       </form>
     </section>
   );

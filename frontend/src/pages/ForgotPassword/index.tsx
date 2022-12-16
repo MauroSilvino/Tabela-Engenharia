@@ -3,6 +3,8 @@ import * as yup from "yup";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { api } from "../../api";
+import { useNavigate } from "react-router-dom";
+
 
 interface ForgotPasswordFormSchema {
   email: string;
@@ -37,6 +39,10 @@ export const ForgotPassword = () => {
     console.log(responseData);
   };
 
+  const navigate = useNavigate()
+  const handleClick = navigate("/recoverpassword")
+  
+
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>Esqueci minha senha</h2>
@@ -53,7 +59,7 @@ export const ForgotPassword = () => {
           <input type="email" id="email" {...register("email")} />
         </div>
 
-        <button className={styles.submitBtn}>Enviar</button>
+        <button onClick={() => handleClick} className={styles.submitBtn}>Enviar</button>
       </form>
     </section>
   );

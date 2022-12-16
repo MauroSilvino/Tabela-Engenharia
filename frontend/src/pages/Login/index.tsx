@@ -66,7 +66,7 @@ export const Login = () => {
         <button className={styles.submitBtn}>Entrar</button>
       </form>
 
-      <Link className={styles.passwordForgot} to="/recuperar-senha">
+      <Link className={styles.passwordForgot} to="/forgotpassword">
         Esqueci minha senha
       </Link>
     </section>
