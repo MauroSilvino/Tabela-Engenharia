@@ -1,0 +1,21 @@
+.companyBreaks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  background-color: var(--white);
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .strongBlue {
+    color: var(--blue-two);
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}

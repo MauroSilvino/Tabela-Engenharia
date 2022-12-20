@@ -1,0 +1,19 @@
+.market {
+  margin: 0 1rem;
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  border: 0.2px solid #d4d3d3;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+  .marketCard {
+    margin-inline-end: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  strong {
+    color: var(--blue-two);
+  }
+}

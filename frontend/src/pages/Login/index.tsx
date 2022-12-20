@@ -30,6 +30,10 @@ export const Login = () => {
     resolver: yupResolver(LoginFormSchema),
   });
 
+  const handleLoginWithGoogle = async () => {
+    await api.get("/auth/google");
+  };
+
   const handleFormSubmit: SubmitHandler<FieldValues> = async (data) => {
     const { data: responseData } = await api.post("/users/authenticate", {
       email: data.email,
@@ -63,7 +67,11 @@ export const Login = () => {
           )}
           <input type="password" id="password" {...register("password")} />
         </div>
-        <button className={styles.submitBtn}>Entrar</button>
+        <button className={styles.submitBtn} type="submit">
+          Entrar
+        </button>
+
+        <a href="http://localhost:3000/auth/google">Entrar com Google</a>
       </form>
 
       <Link className={styles.passwordForgot} to="/forgotpassword">

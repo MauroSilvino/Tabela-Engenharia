@@ -24,11 +24,12 @@ export const ResetPassword = () => {
     resolver: yupResolver(ResetPasswordFormSchema),
   });
 
+  const [_, token] = window.location.search.split("=");
 
-  // TEM QUE BOTAR O ENDPOIT DO FORGOTPASSWORD!!!
   const handleFormSubmit: SubmitHandler<FieldValues> = async (data) => {
-    const { data: responseData } = await api.post("/users/authenticate", {
+    const { data: responseData } = await api.post("/password/reset", {
       password: data.password,
+      token,
     });
 
     console.log(responseData);
@@ -38,9 +39,8 @@ export const ResetPassword = () => {
     <section className={styles.container}>
       <h2 className={styles.title}>Redefinir senha</h2>
 
-        <strong className={styles.description}>
-            Crie uma nova senha
-        </strong>
+      <strong className={styles.description}>Crie uma nova senha</strong>
+
       <form onSubmit={handleSubmit(handleFormSubmit)} className={styles.form}>
         <div className={styles.inputContainer}>
           <label htmlFor="email">Nova senha</label>
@@ -49,13 +49,14 @@ export const ResetPassword = () => {
           )}
           <input type="text" id="email" {...register("password")} />
         </div>
+
         <div className={styles.inputContainer}>
           <label htmlFor="email">Repetir nova senha</label>
-            {errors.password && (
-              <span className={styles.inputError}>{errors.password.message}</span>
-            )}
-            <input type="text" id="email" {...register("password")} />
-        </div >
+          {errors.password && (
+            <span className={styles.inputError}>{errors.password.message}</span>
+          )}
+          <input type="text" id="email" {...register("password")} />
+        </div>
 
         <button className={styles.submitBtn}>Enviar</button>
       </form>

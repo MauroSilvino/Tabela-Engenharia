@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { ForgotPassword } from "./pages/ForgotPassword";
+import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Payment } from "./pages/Payment";
 import { RecoverPassword } from "./pages/RecoverPassword";
@@ -12,6 +13,10 @@ export const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
       {
         path: "/payment",
         element: <Payment />,
@@ -25,16 +30,16 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/forgotpassword",
+        path: "/forgotPassword",
         element: <ForgotPassword />,
       },
       {
-        path: "/recoverpassword",
-        element: <RecoverPassword/>,
+        path: "/recoverPassword",
+        element: <RecoverPassword />,
       },
       {
-        path: "/resetpassword",
-        element: <ResetPassword/>,
+        path: "/resetPassword",
+        element: <ResetPassword />,
       },
     ],
   },

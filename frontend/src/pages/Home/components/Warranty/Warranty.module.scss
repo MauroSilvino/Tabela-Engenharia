@@ -1,0 +1,19 @@
+.warranty {
+  background-color: var(--light-gray);
+  margin-top: -0.5rem;
+  padding: 1rem 0;
+
+  .warrantyCard {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 0 4rem 3rem;
+
+    strong {
+      font-size: 1.25rem;
+      color: var(--blue-two);
+    }
+  }
+}
