@@ -4,6 +4,7 @@ import { Warranty } from "./components/Warranty";
 import { CompanyBreaks } from "./components/CompanyBreaks";
 import { Market } from "./components/Market";
 import styles from "./Home.module.scss";
+import { WorkSoftware } from "./components/WorkSoftware";
 
 export const Home = () => {
   return (
@@ -13,6 +14,7 @@ export const Home = () => {
       <CompanyBreaks />
       <Market />
       <Target />
+      <WorkSoftware/>
     </section>
   );
 };
