@@ -5,6 +5,7 @@ import { CompanyBreaks } from "./components/CompanyBreaks";
 import { Market } from "./components/Market";
 import styles from "./Home.module.scss";
 import { WorkSoftware } from "./components/WorkSoftware";
+import { Benefits } from "./components/Benefits";
 
 export const Home = () => {
   return (
@@ -15,6 +16,7 @@ export const Home = () => {
       <Market />
       <Target />
       <WorkSoftware/>
+      <Benefits/>
     </section>
   );
 };
