@@ -12,20 +12,35 @@
     h2{
         padding-bottom: 0.725rem;
     }
-    .questionCard{
-        background-color: var(--white);
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        .textPlus{
+    .questionContainer{
+
+
+        .questionCard{
+            border: none;
+            background-color: var(--white);
             display: flex;
             flex-direction: row;
-            align-items: center ;
-            p{
-                font-weight: 600;
-                font-size: 1rem;
-                line-height: 19px;
+            justify-content: space-between;
+            border: 1px solid #EDEDF5;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+            
+            .textPlus{
+                display: flex;
+                flex-direction: row;
+                align-items: center ;
+                p{
+                    font-weight: 600;
+                    font-size: 1rem;
+                    line-height: 19px;
+                }
             }
         }
+        .text{
+            text-align: left;
+            padding-left: 0.25rem;
+        }
+        
     }
+    
 }
