@@ -1,0 +1,44 @@
+.container {
+    margin: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    .card{
+        margin-top: 0.725rem;
+        background: #F9FBFC;
+        border: 1px solid #EDEDF5;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        .cardDescription{
+            padding: 0.725rem;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            .description{
+                margin-left: 0.5rem;
+                display: flex;
+                flex-direction: column;
+
+                align-items: flex-start;
+                gap: 14px;
+
+                h3{
+                    font-size: 1.25;
+                    font-weight: 700;
+                }
+                p{
+                    font-size: 0.875rem;
+                    font-weight: 200;
+                }
+            }
+        }
+        .textarea{
+            margin-right: 0.725rem;
+            margin-left: 0.725rem;
+            margin-bottom: 0.725rem;
+
+        }
+    }
+}
