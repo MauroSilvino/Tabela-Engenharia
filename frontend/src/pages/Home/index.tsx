@@ -8,6 +8,7 @@ import { WorkSoftware } from "./components/WorkSoftware";
 import { Benefits } from "./components/Benefits";
 import { Depositions } from "./components/Depositions";
 import { Questions } from "./components/Questions";
+import { Message } from "./components/Message";
 
 export const Home = () => {
   return (
@@ -21,6 +22,7 @@ export const Home = () => {
       <Benefits/>
       <Depositions/>
       <Questions/>
+      <Message/>
     </section>
   );
 };
