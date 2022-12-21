@@ -2,7 +2,7 @@ import styles from "./CompanyBreaks.module.scss";
 
 export const CompanyBreaks = () => {
   return (
-    <section className={styles.companyBreaks}>
+    <section className={styles.container}>
       <h2>
         Empresa quebra é{" "}
         <strong className={styles.strongBlue}>quando tem obra!</strong>
