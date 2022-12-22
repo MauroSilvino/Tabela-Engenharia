@@ -1,9 +1,16 @@
 import styles from "./Questions.module.scss";
+import React from 'react';
+import * as Accordion from '@radix-ui/react-accordion';
+import classNames from 'classnames';
+import { ChevronDownIcon } from '@radix-ui/react-icons';
 import plus from "../../../../assets/plus.png";
 import minus from "../../../../assets/minus.png";
 import greaterthandown from "../../../../assets/greaterthandown.png"
 import greaterthan from "../../../../assets/greaterthan.png";
 import { useState } from "react";
+import AccordionDemo from "./Item";
+
+
 export const Questions = () => {
 
     const [open, setOpen] = useState(false);
@@ -11,7 +18,9 @@ export const Questions = () => {
     return (
         <section className={styles.container}>
             <h2>Perguntas Frequentes</h2>
-            <div className={styles.questionContainer} onClick={() => {open ? setOpen(false) : setOpen(true)}}>
+
+            <AccordionDemo/>
+          {/*   <div className={styles.questionContainer} onClick={() => {open ? setOpen(false) : setOpen(true)}}>
                 <div>
                     <div className={styles.questionCard}>
                         <div className={styles.textPlus}>
@@ -26,7 +35,9 @@ export const Questions = () => {
                     </div> : ""}
                 </div>
             </div>
-            
+             */}
+             
+
         </section>
     )
 }
