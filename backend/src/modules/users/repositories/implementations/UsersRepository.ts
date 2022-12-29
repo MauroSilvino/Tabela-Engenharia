@@ -34,4 +34,17 @@ export class UsersRepository implements IUsersRepository {
 
     return user;
   }
+
+  async findById(id: number): Promise<User | null> {
+    return await prismaClient.user.findUnique({ where: { id } });
+  }
+
+  async update(user: User): Promise<User> {
+    return await prismaClient.user.update({
+      where: {
+        id: user.id,
+      },
+      data: user,
+    });
+  }
 }
