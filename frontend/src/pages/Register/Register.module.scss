@@ -27,6 +27,14 @@
   border-radius: 16px;
   margin: 0 auto;
 
+  p {
+    margin-top: 1.5rem;
+
+    .login {
+      color: var(--blue);
+    }
+  }
+
   .inputContainer {
     margin-top: 0.7rem;
     margin-bottom: 2rem;
@@ -56,7 +64,7 @@
   .submitBtn {
     background-color: var(--blue);
     padding: 10px;
-    width: 100%;
+    width: 95%;
     border-radius: 8px;
     border: none;
     color: var(--white);

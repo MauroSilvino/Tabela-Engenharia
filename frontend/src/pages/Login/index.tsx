@@ -71,7 +71,16 @@ export const Login = () => {
           Entrar
         </button>
 
-        <a href="http://localhost:3000/auth/google">Entrar com Google</a>
+        <a href="http://localhost:3000/auth/google" className={styles.google}>
+          Entrar com Google
+        </a>
+
+        <p>
+          Ainda não tem uma conta?{" "}
+          <Link to="/register" className={styles.register}>
+            Clique aqui para cadastrar.
+          </Link>
+        </p>
       </form>
 
       <Link className={styles.passwordForgot} to="/forgotpassword">

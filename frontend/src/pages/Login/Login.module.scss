@@ -1,11 +1,9 @@
 .container {
-  width: 100vw;
-  height: 100vh;
   background: var(--white);
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 0 1rem;
+  padding: 0 1rem 3rem;
   overflow: hidden;
 
   .passwordForgot {
@@ -17,7 +15,7 @@
 
   .title {
     font-size: 3rem;
-    margin: 6rem 0;
+    margin: 6rem 0 3rem;
   }
 
   .description {
@@ -35,7 +33,15 @@
   border-radius: 16px;
   margin: 0 auto;
 
-  a {
+  p {
+    margin-top: 1.5rem;
+
+    .register {
+      color: var(--blue);
+    }
+  }
+
+  .google {
     display: block;
     background-color: red;
     color: white;
@@ -78,9 +84,9 @@
   }
 
   .submitBtn {
+    width: 95%;
     background-color: var(--blue);
     padding: 10px;
-    width: 100%;
     border-radius: 8px;
     border: none;
     color: var(--white);

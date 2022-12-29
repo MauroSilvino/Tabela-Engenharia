@@ -2,6 +2,9 @@ import styles from "./Register.module.scss";
 import * as yup from "yup";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Link } from "react-router-dom";
+import { api } from "../../api";
+import { AspectRatioIcon, DragHandleDots1Icon } from "@radix-ui/react-icons";
 
 interface RegisterFormSchema {
   name: string;
@@ -35,7 +38,7 @@ export const Register = () => {
     resolver: yupResolver(registerFormSchema),
   });
 
-  const handleFormSubmit: SubmitHandler<FieldValues> = (data) => {
+  const handleFormSubmit: SubmitHandler<RegisterFormSchema> = async (data) => {
     const passwordIsEqual = data.password === data.passwordConfirm;
     if (!passwordIsEqual) {
       setError("password", { message: "Senhas não são iguais." });
@@ -43,7 +46,10 @@ export const Register = () => {
       return;
     }
 
-    console.log(data);
+    await api.post("/users", {
+      ...data,
+      cellphone: "123123123",
+    });
   };
 
   return (
@@ -96,6 +102,13 @@ export const Register = () => {
         </div>
 
         <button className={styles.submitBtn}>Cadastrar</button>
+
+        <p>
+          Já tem uma conta?{" "}
+          <Link to="/login" className={styles.login}>
+            Clique aqui para entrar.
+          </Link>
+        </p>
       </form>
     </section>
   );
