@@ -1,3 +1,4 @@
+import { IMailProvider } from "./providers/IMailProvider";
 import { container } from "tsyringe";
 import { AddressesRepository } from "../../modules/addresses/repositories/implementations/AddressesRepository";
 import { IItemsRepository } from "../../modules/items/repositories/IItemsRepository";
@@ -11,8 +12,9 @@ import { ICategoriesRepository } from "../../modules/categories/repositories/ICa
 import { CategoriesRepository } from "../../modules/categories/repositories/implementations/CategoriesRepository";
 import { IUsersTokensRepository } from "../../modules/users/tokens/repositories/IUsersTokensRepository";
 import { UsersTokensRepository } from "../../modules/users/tokens/repositories/implementations/UsersTokensRepository";
-import { IDateProvider } from "./providers/DateProvider/IDateProvider";
-import { DayJsDateProvider } from "./providers/DateProvider/implementations/DayJsDateProvider";
+import { IDateProvider } from "./providers/IDateProvider";
+import { DayJsDateProvider } from "./providers/implementations/DayJsDateProvider";
+import { EtherealMailProvider } from "./providers/implementations/EtherealMailProvider";
 
 container.registerSingleton<IUsersRepository>(
   "UsersRepository",
@@ -45,3 +47,8 @@ container.registerSingleton<IUsersTokensRepository>(
 );
 
 container.registerSingleton<IDateProvider>("DateProvider", DayJsDateProvider);
+
+container.registerInstance<IMailProvider>(
+  "MailProvider",
+  new EtherealMailProvider()
+);
