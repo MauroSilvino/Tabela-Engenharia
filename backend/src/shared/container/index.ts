@@ -9,6 +9,10 @@ import { IUsersRepository } from "../../modules/users/repositories/IUsersReposit
 import { IAddressesRepository } from "../../modules/addresses/repositories/IAddressesRepository";
 import { ICategoriesRepository } from "../../modules/categories/repositories/ICategoriesRepository";
 import { CategoriesRepository } from "../../modules/categories/repositories/implementations/CategoriesRepository";
+import { IUsersTokensRepository } from "../../modules/users/tokens/repositories/IUsersTokensRepository";
+import { UsersTokensRepository } from "../../modules/users/tokens/repositories/implementations/UsersTokensRepository";
+import { IDateProvider } from "./providers/DateProvider/IDateProvider";
+import { DayJsDateProvider } from "./providers/DateProvider/implementations/DayJsDateProvider";
 
 container.registerSingleton<IUsersRepository>(
   "UsersRepository",
@@ -34,3 +38,10 @@ container.registerSingleton<ICategoriesRepository>(
   "CategoriesRepository",
   CategoriesRepository
 );
+
+container.registerSingleton<IUsersTokensRepository>(
+  "UsersTokensRepository",
+  UsersTokensRepository
+);
+
+container.registerSingleton<IDateProvider>("DateProvider", DayJsDateProvider);
