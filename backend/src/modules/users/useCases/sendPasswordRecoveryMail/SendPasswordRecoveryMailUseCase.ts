@@ -46,7 +46,7 @@ class SendPasswordRecoveryMailUseCase {
 
     const variables = {
       name: user.name,
-      link: `https://localhost:5173/resetPassword?token=${token}`,
+      link: `http://localhost:5173/resetPassword?token=${token}`,
     };
 
     await this.mailProvider.sendMail(
