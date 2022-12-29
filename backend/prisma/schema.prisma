@@ -19,6 +19,7 @@ model User {
 
   address  Address?
   projects Project[]
+  tokens   UserToken[]
 
   @@map("users")
 }
@@ -75,4 +76,16 @@ model Category {
 
   @@fulltext([name])
   @@map("categories")
+}
+
+model UserToken {
+  id          Int      @id @default(autoincrement())
+  token       String
+  userId      Int
+  expiresDate DateTime
+  createdAt   DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("users_tokens")
 }
