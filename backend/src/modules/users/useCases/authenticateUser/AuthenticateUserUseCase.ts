@@ -2,7 +2,7 @@ import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
 import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../errors/AppError";
-import { IDateProvider } from "../../../../shared/container/providers/DateProvider/IDateProvider";
+import { IDateProvider } from "../../../../shared/container/providers/IDateProvider";
 import { IAuthenticateUserDTO } from "../../dtos/IAuthenticateUserDTO";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 import { IUsersTokensRepository } from "../../tokens/repositories/IUsersTokensRepository";
