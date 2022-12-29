@@ -34,7 +34,27 @@
     }
   }
 
-  img {
-    margin: 1rem 0;
+  > img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 420px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    padding: 0 2.5rem;
+    max-width: 1220px;
+    margin: 3rem auto 0;
+
+    > img {
+      flex: 1;
+    }
+
+    .target,
+    .notTarget {
+      width: 30%;
+    }
   }
 }

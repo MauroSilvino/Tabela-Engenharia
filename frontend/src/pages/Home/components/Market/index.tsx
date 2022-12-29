@@ -12,12 +12,14 @@ export const Market = () => {
           <strong>mercado de construção civil?</strong>
         </h2>
 
-        <img
-          src={jornal1}
-          alt="Jornal mostra novas vagas na construção civil"
-        />
-        <img src={jornal2} alt="Construção civil projeta mercado promissor" />
-        <img src={jornal3} alt="Construção civil fomenta a economia" />
+        <div>
+          <img
+            src={jornal1}
+            alt="Jornal mostra novas vagas na construção civil"
+          />
+          <img src={jornal2} alt="Construção civil projeta mercado promissor" />
+          <img src={jornal3} alt="Construção civil fomenta a economia" />
+        </div>
       </div>
     </section>
   );

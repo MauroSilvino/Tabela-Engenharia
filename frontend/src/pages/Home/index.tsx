@@ -1,4 +1,4 @@
-import heroBannerSmall from "../../assets/hero.png";
+import heroBannerSmall from "../../assets/hero-big.png";
 import { Target } from "./components/Target";
 import { Warranty } from "./components/Warranty";
 import { CompanyBreaks } from "./components/CompanyBreaks";
@@ -18,11 +18,11 @@ export const Home = () => {
       <CompanyBreaks />
       <Market />
       <Target />
-      <WorkSoftware/>
-      <Benefits/>
-      <Depositions/>
-      <Questions/>
-      <Message/>
+      <WorkSoftware />
+      <Benefits />
+      <Depositions />
+      <Questions />
+      <Message />
     </section>
   );
 };
