@@ -1,0 +1,50 @@
+.container {
+  flex: 1;
+  background: var(--white);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.dashboardContent {
+  margin-top: 1rem;
+  display: flex;
+  gap: 5rem;
+}
+
+.members,
+.membersPerConstruction {
+  background-color: var(--light-gray);
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  border-radius: 6px;
+
+  p {
+    text-align: center;
+    font-weight: 600;
+    color: var(--very-dark-gray);
+    margin: 0.75rem;
+  }
+}
+
+.membersListArea {
+  .membersListContent {
+    margin-top: 1rem;
+    background-color: var(--light-gray);
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    border-radius: 6px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        border: 1px solid #b9b9b9;
+        padding: 0.5rem;
+      }
+    }
+  }
+}

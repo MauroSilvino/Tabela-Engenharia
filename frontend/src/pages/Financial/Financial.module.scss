@@ -1,0 +1,79 @@
+.container {
+  flex: 1;
+  background: var(--white);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.balanceContent {
+  margin-top: 1rem;
+  display: flex;
+  gap: 5rem;
+}
+
+.dashboard {
+  background-color: var(--light-gray);
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.totalBalance {
+  background-color: var(--light-gray);
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  border-radius: 6px;
+
+  strong {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--very-dark-gray);
+  }
+}
+
+.notesArea {
+  .notesContent {
+    margin-top: 1rem;
+    background-color: var(--light-gray);
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    border-radius: 6px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        border: 1px solid #b9b9b9;
+        padding: 0.5rem;
+      }
+    }
+  }
+}
+
+.membersArea {
+  .membersContent {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    background-color: var(--light-gray);
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    border-radius: 6px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        border: 1px solid #b9b9b9;
+        padding: 0.5rem;
+      }
+    }
+  }
+}

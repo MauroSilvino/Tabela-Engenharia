@@ -6,4 +6,21 @@
 
 .content {
   flex: 1;
+  display: flex;
+}
+
+.menu {
+  width: 8rem;
+  background-color: #0d649e;
+  padding: 1rem;
+  color: var(--white);
+
+  nav {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      font-weight: 600;
+    }
+  }
 }
