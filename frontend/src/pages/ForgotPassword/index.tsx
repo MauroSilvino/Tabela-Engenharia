@@ -43,10 +43,10 @@ export const ForgotPassword = () => {
     <section className={styles.container}>
       <h2 className={styles.title}>Esqueci minha senha</h2>
 
-      <strong className={styles.description}>
-        Entre com o seu e-mail. Instruções serão enviadas para lá
-      </strong>
       <form onSubmit={handleSubmit(handleFormSubmit)} className={styles.form}>
+        <strong className={styles.description}>
+          Entre com o seu e-mail. <br /> As Instruções serão enviadas para lá
+        </strong>
         {isPasswordForgotEmailSent ? (
           "email enviado"
         ) : (

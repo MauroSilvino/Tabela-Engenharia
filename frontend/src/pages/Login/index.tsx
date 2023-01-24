@@ -45,8 +45,6 @@ export const Login = () => {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>Login</h2>
-
       <form onSubmit={handleSubmit(handleFormSubmit)} className={styles.form}>
         <strong className={styles.description}>
           Entre com o seu e-mail e senha para acessar a plataforma
@@ -75,6 +73,10 @@ export const Login = () => {
           Entrar com Google
         </a>
 
+        <Link className={styles.passwordForgot} to="/forgotpassword">
+          Esqueci minha senha
+        </Link>
+
         <p>
           Ainda não tem uma conta?{" "}
           <Link to="/register" className={styles.register}>
@@ -82,10 +84,6 @@ export const Login = () => {
           </Link>
         </p>
       </form>
-
-      <Link className={styles.passwordForgot} to="/forgotpassword">
-        Esqueci minha senha
-      </Link>
     </section>
   );
 };

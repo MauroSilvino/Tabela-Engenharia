@@ -2,6 +2,7 @@ import styles from "./Payment.module.scss";
 import * as yup from "yup";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import * as R from "@radix-ui/react-radio-group";
 
 interface PaymentFormSchema {
   name: string;
@@ -14,6 +15,7 @@ interface PaymentFormSchema {
   cardValidDate: number;
   cvv: number;
   saveCard: boolean;
+  plan: string;
 }
 
 const paymentFormSchema = yup
@@ -36,6 +38,7 @@ const paymentFormSchema = yup
       .length(6, "Data de vecimento deve ter 6 dígitos."),
     cvv: yup.string().length(3, "CVV deve ter 3 dígitos."),
     saveCard: yup.boolean().default(false),
+    plan: yup.string().required("Selecione um plano."),
   })
   .required();
 
@@ -44,6 +47,7 @@ export const Payment = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    setValue,
   } = useForm<PaymentFormSchema>({
     resolver: yupResolver(paymentFormSchema),
   });
@@ -161,6 +165,37 @@ export const Payment = () => {
             </div>
           </div>
         </section>
+
+        <div className={styles.plansOptions}>
+          <h2>Planos</h2>
+          {errors.plan && (
+            <span className={styles.inputError}>{errors.plan.message}</span>
+          )}
+
+          <R.Root className={styles.plansCards}>
+            <R.Item
+              {...register("plan")}
+              className={styles.planItem}
+              onClick={() => setValue("plan", "haha")}
+              value="1"
+            >
+              <strong>Básico</strong>
+              <p>Plano de projetos</p>
+              <span>R$ 200</span>
+            </R.Item>
+            <R.Item {...register("plan")} className={styles.planItem} value="2">
+              <strong>Médio</strong>
+              <p>Plano de projetos</p>
+              <span>R$ 200</span>
+            </R.Item>
+            <R.Item {...register("plan")} className={styles.planItem} value="3">
+              <strong>Pro</strong>
+              <p>Plano de projetos</p>
+              <span>R$ 200</span>
+            </R.Item>
+          </R.Root>
+        </div>
+
         <div className={styles.totalValue}>
           <span>Valor total</span>
           <span>R$ 120,00</span>

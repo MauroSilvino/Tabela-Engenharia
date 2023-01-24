@@ -1,10 +1,9 @@
 import styles from "./Register.module.scss";
 import * as yup from "yup";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Link } from "react-router-dom";
 import { api } from "../../api";
-import { AspectRatioIcon, DragHandleDots1Icon } from "@radix-ui/react-icons";
 
 interface RegisterFormSchema {
   name: string;
@@ -54,13 +53,11 @@ export const Register = () => {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>Cadastro</h2>
-
-      <strong className={styles.description}>
-        Cadastre-se agora na plataforma [nome da plataforma]
-      </strong>
-
       <form onSubmit={handleSubmit(handleFormSubmit)} className={styles.form}>
+        <strong className={styles.description}>
+          Cadastre-se agora na plataforma [nome da plataforma]
+        </strong>
+
         <div className={styles.inputContainer}>
           <label htmlFor="fullName">Nome completo</label>
           {errors.name && (
@@ -88,7 +85,7 @@ export const Register = () => {
         </div>
 
         <div className={styles.inputContainer}>
-          <label htmlFor="passwordConfirm">Nome completo</label>
+          <label htmlFor="passwordConfirm">Confirmação de senha</label>
           {errors.passwordConfirm && (
             <span className={styles.inputError}>
               {errors.passwordConfirm.message}
