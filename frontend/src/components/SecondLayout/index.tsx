@@ -12,11 +12,11 @@ export const HomeLayout = () => {
         <aside className={styles.menu}>
           <nav>
             <ul>
-              <Link to="/home/recent">Recentes</Link>
-              <Link to="/home/construction">Obras</Link>
-              <Link to="/home/financial">Financeiro</Link>
-              <Link to="/home/orders">Pedidos</Link>
-              <Link to="/home/members">Membros</Link>
+              <Link className={styles.link}  to="/home/recent">Recentes</Link>
+              <Link className={styles.link} to="/home/construction">Obras</Link>
+              <Link className={styles.link} to="/home/financial">Financeiro</Link>
+              <Link className={styles.link} to="/home/orders">Pedidos</Link>
+              <Link className={styles.link} to="/home/members">Membros</Link>
             </ul>
           </nav>
         </aside>

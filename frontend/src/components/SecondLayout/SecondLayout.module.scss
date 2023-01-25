@@ -21,6 +21,11 @@
       flex-direction: column;
       gap: 2rem;
       font-weight: 600;
+
+      .link:focus {
+        background: #0D649E;
+        opacity: 0.7;
+      }
     }
   }
 }
